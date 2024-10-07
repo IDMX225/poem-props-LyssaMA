@@ -7,17 +7,54 @@
   <meta name="description" content="A modern CSS page">
   <meta name="generator" content="Eleventy v1.2">
   <title>IDMX 11ty Sass Starter</title>
-  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="shortcut icon" href="src/images/Sun.png" type="image/png">
+  <link rel="icon" href="src/images/Sun.png" type="image/png">
   <link rel="stylesheet" href="https://unpkg.com/open-props">
   <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <h1>IDMX 11ty Sass Starter</h1>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae sapiente corrupti, maxime eos, nostrum corporis
-    neque pariatur nam rem at mollitia delectus, debitis laboriosam sed quam hic dolore! Obcaecati, necessitatibus.</p>
+  <header class="header">
+    <h1 class="header__title">Signs</h1>
+  </header>
+
+  <main class="main">
+    <section class="main__image-container">
+      <!-- Image Section -->
+      <img class="main__image" src="src/images/Sky.jpg" alt="Sky">
+    </section>
+
+    <article class="main__author">
+      <p class="main__author-name">By Alfred Lichtenstein</p>
+      <p class="main__author-text">
+        The hour moves forward.
+        The mole moves out.
+        The moon emerges furiously.
+        The ocean heaves.
+        The child becomes an old man.
+        Animals pray and flee.
+        It's getting too hot for the trees.
+        The mind boggles.
+        The street dies.
+        The stinking sun stabs.
+        The air becomes scarce.
+        The heart breaks.
+        The frightened dog keeps its mouth shut.
+        The sky lies on its wrong side.
+        The tumult is too much for the stars.
+        The carriages take off.
+      </p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">© 2024 Alyssa Anderson</p>
+    <p class="footer__resources">
+      Sources: "Signs" by Alfred Lichtenstein, Sun photo by Timone Studler, Sky photo by Max Saeling
+    </p>
+  </footer>
+
   <script src="js/index.js"></script>
 </body>
 
