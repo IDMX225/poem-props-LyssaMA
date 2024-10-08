@@ -71,7 +71,7 @@ Use this as the "Publish command" if needed by hosting services such as Netlify.
 
 ## Description
 
-This is a web page that displays the poem "Signs" by Alfred Lichtenstein . It features a styled layout, including an image of a  that matches the theme of the poem. The design incorporates custom CSS. Additionally, there is a favicon image of a .
+This is a web page that displays the poem "Signs" by Alfred Lichtenstein . It features a styled layout, including an image of a starry night that matches the theme of the poem. The design incorporates custom CSS. Additionally, there is a favicon image of a Sun.
 
 ## Features
 
