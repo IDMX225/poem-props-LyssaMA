@@ -1,0 +1,80 @@
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: 'Merriweather', serif;
+    line-height: 1.8;
+    color: #252424;
+    background-color: #b4c9c7;
+    width: 100%;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #6d8a88;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(194, 137, 52, 0.8);
+    color: #e6be22;
+}
+
+/* Image Container */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Author Section */
+.author {
+    margin: 20px 0;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Poem Section */
+.poem {
+    background-color: #b8bfc5;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(49, 49, 49, 0.1);
+    margin: 20px 0;
+}
+
+/* Footer*/
+.footer {
+    background-color: #6d8a88;
+    color: #020202;
+    text-align: center;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .poem {
+        font-size: 1.2rem;
+    }
+}
