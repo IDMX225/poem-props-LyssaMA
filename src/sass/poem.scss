@@ -18,54 +18,81 @@ body {
 
 /* Header */
 header {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 40px 0;
     background-color: #6d8a88;
     color: #fff;
+    border: 4px solid #cc8e1c;
+    border-radius: 12px;
+    margin: 20px 0;
 }
 
 header h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(194, 137, 52, 0.8);
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(3.125rem, 6.25vw, 3.75rem);
+    text-shadow: 3px 3px 5px rgba(194, 137, 52, 0.8);
     color: #e6be22;
+    margin: 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header h1:hover {
+    color: #f5c96b; 
+    text-shadow: 4px 4px 10px rgba(194, 137, 52, 1); 
 }
 
 /* Image Container */
-.image-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-container img {
+.main__image-container {
     width: 100%;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 4px solid #e2b155;
+    border-radius: 12px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.main__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main__image-container:hover .main__image {
+    transform: scale(1.4); 
 }
 
 /* Author Section */
-.author {
-    margin: 20px 0;
-    font-style: italic;
+.main__author {
     text-align: center;
+    margin: 20px 0;
 }
 
 /* Poem Section */
-.poem {
+.main__poem {
     background-color: #b8bfc5;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 2px 4px rgba(49, 49, 49, 0.1);
-    margin: 20px 0;
+    margin: 10px 0;
+    border: 4px solid #e2b155;
 }
 
-/* Footer*/
+/* Footer */
 .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background-color: #6d8a88;
     color: #020202;
-    text-align: center;
     padding: 15px;
-    margin-top: 15px;
+    margin: 0;
+    border: 4px solid #cc8e1c;
+    border-radius: 8px;
 }
 
 /* Responsive Design */
@@ -74,7 +101,7 @@ header h1 {
         font-size: 2.5rem;
     }
 
-    .poem {
+    .main__poem {
         font-size: 1.2rem;
     }
 }
