@@ -7,32 +7,30 @@
     padding: 0;
 }
 
-/* CSS Variables for Font Sizes */
+/* Using Open Props variables for font sizes, colors, and spacing */
 :root {
-    --font-size-author: 2rem;      
-    --font-size-poem: 2rem;        
-    --font-size-author-small: 2rem; 
-    --font-size-poem-small: 2rem;   
-    --font-size-md: 1.5rem;
+    --font-size-author: var(--font-size-lg);
+    --font-size-poem: var(--font-size-md);
+    --font-size-author-small: var(--font-size-sm);
+    --font-size-poem-small: var(--font-size-xs);
 
-    /* Color Variables */
-    --color-bg: #0b1a1e;
-    --color-text: #252424;
-    --color-header-bg: rgba(109, 138, 136, 0.8);
-    --color-header-border: #cc8e1c;
-    --color-header-text: #f8e7c4;
-    --color-header-hover: #fdcc6a;
-    --color-header-shadow: rgba(207, 150, 64, 0.8);
-    --color-image-border: rgba(47, 60, 68, 0.7);
-    --color-image-hover: rgba(233, 178, 97);
-    --color-poem-bg: rgba(184, 191, 197, 0.9);
-    --color-poem-border: rgba(226, 177, 85, 0.7);
-    --color-poem-hover: #975e12;
-    --color-footer-bg: rgba(109, 138, 136, 0.8);
-    --color-footer-border: #cc8e1c;
-    --color-footer-link: #0b1a1e;
-    --color-footer-link-hover: #fdcc6a;
-    --color-poem-text: #252424;
+    --color-bg: var(--color-bg);
+    --color-text: var(--color-text);
+    --color-header-bg: var(--color-gray-900);
+    --color-header-border: var(--color-primary);
+    --color-header-text: var(--color-white);
+    --color-header-hover: var(--color-yellow);
+    --color-header-shadow: var(--color-gray-700);
+    --color-image-border: var(--color-gray-600);
+    --color-image-hover: var(--color-yellow);
+    --color-poem-bg: var(--color-gray-800);
+    --color-poem-border: var(--color-primary);
+    --color-poem-hover: var(--color-orange);
+    --color-footer-bg: var(--color-gray-900);
+    --color-footer-border: var(--color-primary);
+    --color-footer-link: var(--color-white);
+    --color-footer-link-hover: var(--color-yellow);
+    --color-poem-text: var(--color-text);
 }
 
 /* Body */
@@ -42,7 +40,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-bg);
     width: 100%;
-    padding: 0 1rem;
+    padding: var(--space-md);
 }
 
 /* Header */
@@ -50,17 +48,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: var(--space-lg) 0;
     background-color: var(--color-header-bg);
-    color: #fff;
+    color: var(--color-header-text);
     border: 4px solid var(--color-header-border);
-    border-radius: 12px;
-    margin: 20px 0;
+    border-radius: var(--radius-lg);
+    margin: var(--space-lg) 0;
 }
 
 .header__title {
     font-family: 'Cinzel', serif;
-    font-size: clamp(3rem, 6vw, 6rem);
+    font-size: clamp(var(--font-size-lg), 6vw, var(--font-size-xl));
     text-shadow: 2px 2px 5px var(--color-header-shadow);
     color: var(--color-header-text);
     margin: 0;
@@ -78,8 +76,8 @@ body {
     height: auto;
     overflow: hidden;
     border: 4px solid var(--color-image-border);
-    border-radius: 12px;
-    margin: 20px 0;
+    border-radius: var(--radius-md);
+    margin: var(--space-md) 0;
     position: relative;
 }
 
@@ -97,26 +95,26 @@ body {
 /* Author Section */
 .main__author-section {
     text-align: left;
-    margin: 20px 0;
+    margin: var(--space-md) 0;
 }
 
 .main__author-text {
-    color: #fff;
-    font-family: 'Cinzel', serif; 
+    color: var(--color-header-text);
+    font-family: 'Cinzel', serif;
     font-size: var(--font-size-author);
-    font-style: italic; 
+    font-style: italic;
 }
 
 /* Poem Section */
 .main__poem {
     background-color: var(--color-poem-bg);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(49, 49, 49, 0.1);
-    margin: 10px 0;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin: var(--space-sm) 0;
     border: 4px solid var(--color-poem-border);
     color: var(--color-poem-text);
-    font-family: 'Cinzel', serif; 
+    font-family: 'Cinzel', serif;
     text-align: left;
     font-size: var(--font-size-poem);
     font-weight: 400;
@@ -128,7 +126,6 @@ body {
     text-shadow: 3px 3px 8px var(--color-image-hover);
 }
 
-
 /* Footer Section */
 .footer {
     display: flex;
@@ -136,11 +133,11 @@ body {
     align-items: center;
     text-align: center;
     background-color: var(--color-footer-bg);
-    color: #fff;
-    padding: 15px;
+    color: var(--color-header-text);
+    padding: var(--space-md);
     margin: 0;
     border: 4px solid var(--color-footer-border);
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
     line-height: 1.2;
 }
