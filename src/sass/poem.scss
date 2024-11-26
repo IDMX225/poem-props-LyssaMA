@@ -7,12 +7,40 @@
     padding: 0;
 }
 
+/* CSS Variables for Font Sizes */
+:root {
+    --font-size-author: 2rem;      
+    --font-size-poem: 2rem;        
+    --font-size-author-small: 2rem; 
+    --font-size-poem-small: 2rem;   
+    --font-size-md: 1.5rem;
+
+    /* Color Variables */
+    --color-bg: #0b1a1e;
+    --color-text: #252424;
+    --color-header-bg: rgba(109, 138, 136, 0.8);
+    --color-header-border: #cc8e1c;
+    --color-header-text: #f8e7c4;
+    --color-header-hover: #fdcc6a;
+    --color-header-shadow: rgba(207, 150, 64, 0.8);
+    --color-image-border: rgba(47, 60, 68, 0.7);
+    --color-image-hover: rgba(233, 178, 97);
+    --color-poem-bg: rgba(184, 191, 197, 0.9);
+    --color-poem-border: rgba(226, 177, 85, 0.7);
+    --color-poem-hover: #975e12;
+    --color-footer-bg: rgba(109, 138, 136, 0.8);
+    --color-footer-border: #cc8e1c;
+    --color-footer-link: #0b1a1e;
+    --color-footer-link-hover: #fdcc6a;
+    --color-poem-text: #252424;
+}
+
 /* Body */
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 2.4;
-    color: #252424;
-    background-color: #0b1a1e;
+    color: var(--color-text);
+    background-color: var(--color-bg);
     width: 100%;
     padding: 0 1rem;
 }
@@ -23,25 +51,25 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 0;
-    background-color: rgba(109, 138, 136, 0.8);
+    background-color: var(--color-header-bg);
     color: #fff;
-    border: 4px solid #cc8e1c;
+    border: 4px solid var(--color-header-border);
     border-radius: 12px;
     margin: 20px 0;
 }
 
 .header__title {
     font-family: 'Cinzel', serif;
-    font-size: clamp(3.125rem, 6.25vw, 3.75rem);
-    text-shadow: 3px 3px 5px rgba(207, 150, 64, 0.8);
-    color: #f8e7c4;
+    font-size: clamp(3rem, 6vw, 6rem);
+    text-shadow: 2px 2px 5px var(--color-header-shadow);
+    color: var(--color-header-text);
     margin: 0;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .header__title:hover {
-    color: #fdcc6a;
-    text-shadow: 3px 3px 8px rgb(233, 178, 97);
+    color: var(--color-header-hover);
+    text-shadow: 2px 2px 6px var(--color-image-hover);
 }
 
 /* Image Container */
@@ -49,7 +77,7 @@ body {
     width: 100%;
     height: auto;
     overflow: hidden;
-    border: 4px solid rgba(47, 60, 68, 0.7);
+    border: 4px solid var(--color-image-border);
     border-radius: 12px;
     margin: 20px 0;
     position: relative;
@@ -69,35 +97,37 @@ body {
 /* Author Section */
 .main__author-section {
     text-align: left;
-    margin: 20px 0; 
+    margin: 20px 0;
 }
 
 .main__author-text {
-    color: #fff; 
+    color: #fff;
     font-family: 'Cinzel', serif; 
-    font-size: 1.2rem; 
+    font-size: var(--font-size-author);
     font-style: italic; 
 }
 
 /* Poem Section */
 .main__poem {
-    background-color: rgba(184, 191, 197, 0.9);
+    background-color: var(--color-poem-bg);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(49, 49, 49, 0.1);
     margin: 10px 0;
-    border: 4px solid rgba(226, 177, 85, 0.7);
-    color: #252424; 
-    font-family: 'Georgia';
+    border: 4px solid var(--color-poem-border);
+    color: var(--color-poem-text);
+    font-family: 'Cinzel', serif; 
     text-align: left;
-    font-size: 1.5rem;
-    transition: color 0.3s ease, text-shadow 0.3s ease; 
+    font-size: var(--font-size-poem);
+    font-weight: 400;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .main__poem:hover {
-    color: #91611a; 
-    text-shadow: 2px 2px 7px rgb(255, 255, 255); 
+    color: var(--color-poem-hover);
+    text-shadow: 3px 3px 8px var(--color-image-hover);
 }
+
 
 /* Footer Section */
 .footer {
@@ -105,23 +135,38 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: rgba(109, 138, 136, 0.8);
+    background-color: var(--color-footer-bg);
     color: #fff;
     padding: 15px;
     margin: 0;
-    border: 4px solid #cc8e1c;
+    border: 4px solid var(--color-footer-border);
     border-radius: 8px;
-    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif; 
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
     line-height: 1.2;
+}
+
+/* Footer Links */
+.footer a {
+    color: var(--color-footer-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--color-footer-link-hover);
 }
 
 /* Responsive Design */
 @media (max-width: 800px) {
     .header__title {
-        font-size: 2.5rem;
+        font-size: var(--font-size-md);
     }
 
     .main__poem {
-        font-size: 1.2rem;
+        font-size: var(--font-size-poem-small);
+    }
+
+    .main__author-text {
+        font-size: var(--font-size-author-small);
     }
 }
