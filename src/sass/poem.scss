@@ -2,168 +2,137 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Using Open Props variables for font sizes, colors, and spacing */
-:root {
-    --font-size-author: var(--font-size-lg);
-    --font-size-poem: var(--font-size-md);
-    --font-size-author-small: var(--font-size-sm);
-    --font-size-poem-small: var(--font-size-xs);
-
-    --color-bg: var(--color-bg);
-    --color-text: var(--color-text);
-    --color-header-bg: var(--color-gray-900);
-    --color-header-border: var(--color-primary);
-    --color-header-text: var(--color-white);
-    --color-header-hover: var(--color-yellow);
-    --color-header-shadow: var(--color-gray-700);
-    --color-image-border: var(--color-gray-600);
-    --color-image-hover: var(--color-yellow);
-    --color-poem-bg: var(--color-gray-800);
-    --color-poem-border: var(--color-primary);
-    --color-poem-hover: var(--color-orange);
-    --color-footer-bg: var(--color-gray-900);
-    --color-footer-border: var(--color-primary);
-    --color-footer-link: var(--color-white);
-    --color-footer-link-hover: var(--color-yellow);
-    --color-poem-text: var(--color-text);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Body */
 body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 2.4;
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    width: 100%;
-    padding: var(--space-md);
+  font-family: var(--font-sans, 'Open Sans', sans-serif);
+  line-height: var(--line-height, 2.4);
+  color: var(--color-text, #252424);
+  background-color: var(--color-background, #0b1a1e);
+  width: 100%;
+  padding: var(--space-2, 1rem);
 }
 
 /* Header */
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--space-lg) 0;
-    background-color: var(--color-header-bg);
-    color: var(--color-header-text);
-    border: 4px solid var(--color-header-border);
-    border-radius: var(--radius-lg);
-    margin: var(--space-lg) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-4, 40px) 0;
+  background-color: rgba(109, 138, 136, 0.8);
+  color: var(--color-light, #fff);
+  border: var(--border-width-2, 4px) solid var(--color-accent, #cc8e1c);
+  border-radius: var(--radius-2, 12px);
+  margin: var(--space-4, 20px) 0;
 }
 
 .header__title {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(var(--font-size-lg), 6vw, var(--font-size-xl));
-    text-shadow: 2px 2px 5px var(--color-header-shadow);
-    color: var(--color-header-text);
-    margin: 0;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: clamp(var(--font-size-3, 3.125rem), 6.25vw, var(--font-size-4, 3.75rem));
+  text-shadow: 3px 3px 5px rgba(207, 150, 64, 0.8);
+  color: var(--color-primary, #f8e7c4);
+  margin: 0;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .header__title:hover {
-    color: var(--color-header-hover);
-    text-shadow: 2px 2px 6px var(--color-image-hover);
+  color: var(--color-hover, #fdcc6a);
+  text-shadow: 3px 3px 8px rgb(233, 178, 97);
 }
 
 /* Image Container */
 .main__image-container {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border: 4px solid var(--color-image-border);
-    border-radius: var(--radius-md);
-    margin: var(--space-md) 0;
-    position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: var(--border-width-2, 4px) solid rgba(47, 60, 68, 0.7);
+  border-radius: var(--radius-2, 12px);
+  margin: var(--space-4, 20px) 0;
+  position: relative;
 }
 
 .main__image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .main__image-container:hover .main__image {
-    transform: scale(1.4);
+  transform: scale(1.4);
 }
 
 /* Author Section */
 .main__author-section {
-    text-align: left;
-    margin: var(--space-md) 0;
+  text-align: left;
+  margin: var(--space-4, 20px) 0;
 }
 
 .main__author-text {
-    color: var(--color-header-text);
-    font-family: 'Cinzel', serif;
-    font-size: var(--font-size-author);
-    font-style: italic;
+  color: var(--color-light, #fff);
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-size: var(--font-size-2, 2rem);
+  font-style: italic;
 }
 
 /* Poem Section */
 .main__poem {
-    background-color: var(--color-poem-bg);
-    padding: var(--space-lg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    margin: var(--space-sm) 0;
-    border: 4px solid var(--color-poem-border);
-    color: var(--color-poem-text);
-    font-family: 'Cinzel', serif;
-    text-align: left;
-    font-size: var(--font-size-poem);
-    font-weight: 400;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+  background-color: rgba(184, 191, 197, 0.9);
+  padding: var(--space-6, 30px);
+  border-radius: var(--radius-2, 12px);
+  box-shadow: 0 2px 4px rgba(49, 49, 49, 0.1);
+  margin: var(--space-2, 10px) 0;
+  border: var(--border-width-2, 4px) solid rgba(226, 177, 85, 0.7);
+  color: var(--color-text, #252424);
+  font-family: var(--font-serif, 'Georgia');
+  text-align: left;
+  font-size: var(--font-size-3, 1.5rem);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .main__poem:hover {
-    color: var(--color-poem-hover);
-    text-shadow: 3px 3px 8px var(--color-image-hover);
+  color: var(--color-hover, #91611a);
+  text-shadow: 2px 2px 7px rgb(255, 255, 255);
 }
 
 /* Footer Section */
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: var(--color-footer-bg);
-    color: var(--color-header-text);
-    padding: var(--space-md);
-    margin: 0;
-    border: 4px solid var(--color-footer-border);
-    border-radius: var(--radius-md);
-    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
-    line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(109, 138, 136, 0.8);
+  color: var(--color-light, #fff);
+  padding: var(--space-3, 15px);
+  margin: 0;
+  border: var(--border-width-2, 4px) solid var(--color-accent, #cc8e1c);
+  border-radius: var(--radius-1, 8px);
+  font-family: var(--font-serif, Georgia, 'Times New Roman', Times, serif, sans-serif);
+  line-height: 1.2;
 }
 
-/* Footer Links */
+/* Links in Footer */
 .footer a {
-    color: var(--color-footer-link);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--color-text, #0b1a1e);
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
-    color: var(--color-footer-link-hover);
+  color: var(--color-hover, #fdcc6a);
 }
 
 /* Responsive Design */
 @media (max-width: 800px) {
-    .header__title {
-        font-size: var(--font-size-md);
-    }
+  .header__title {
+    font-size: var(--font-size-2, 2.5rem);
+  }
 
-    .main__poem {
-        font-size: var(--font-size-poem-small);
-    }
-
-    .main__author-text {
-        font-size: var(--font-size-author-small);
-    }
+  .main__poem {
+    font-size: var(--font-size-4, 2rem);
+  }
 }
